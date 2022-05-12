@@ -1,6 +1,6 @@
 {
   "name": "interpolate-util",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "lib/index.js",
   "homepage": "https://github.com/sammyl720/interpolation-utilities",
   "description": "Usefull utility functions for interpolating values from ranges",
@@ -25,7 +25,6 @@
     "ts-node": "^10.7.0"
   },
   "dependencies": {
-    "reflect-metadata": "^0.1.13",
     "typescript": "^4.6.4"
   },
   "author": "Shmuel Leider"
