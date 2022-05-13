@@ -21,7 +21,7 @@ Clamp a value between a minimum and maximum
 ```javascript
 clamp(5, 0, 10); // 5
 clamp(15, 0, 10); // 10
-clamp(5, 10, 20); // 5
+clamp(5, 10, 20); // 10
 ```
 
 ---

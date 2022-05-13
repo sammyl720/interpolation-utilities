@@ -1,6 +1,6 @@
 {
   "name": "interpolate-util",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "main": "lib/index.js",
   "homepage": "https://github.com/sammyl720/interpolation-utilities",
   "description": "Usefull utility functions for interpolating values from ranges",

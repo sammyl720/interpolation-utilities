@@ -5,6 +5,10 @@ import {
 	interpolateValue
 } from '../src/index';
 
+test('clamp with throw an error if min value greater or equal to max value', () => {
+	expect(() => clamp(5, 10, 6)).toThrowError();
+})
+
 test('clamp will yield min value when given value is less then min', () => {
 	expect(clamp(5, 10, 20)).toBe(10);
 });

@@ -12,6 +12,7 @@ export function getValueAtPercentagePoint(
 	percentage: number,
 	strict = true
 ) {
+	isValidMinMax(min, max);
 	if (percentage < 0 || percentage > 1) {
 		if (strict) {
 			throw new Error("Percentage argument should be within range of 0 and 1.");
@@ -32,6 +33,7 @@ export function getValueAtPercentagePoint(
  * Otherwise, it returns the minimum if it's to low or the maximum if it's to high
  */
 export function clamp(value: number, min: number = 0, max: number = 1) {
+	isValidMinMax(min, max);
 	return Math.min(max, Math.max(min, value));
 }
 
@@ -43,6 +45,7 @@ export function clamp(value: number, min: number = 0, max: number = 1) {
  * @returns The percentage for given value
  */
 export function getPercentageFromValue(min: number, max: number, value: number) {
+	isValidMinMax(min,max);
 	return clamp((value - min) / (max - min));
 }
 
@@ -66,4 +69,18 @@ export function interpolateValue(
 		rangeBMax,
 		getPercentageFromValue(rangeAMin, rangeAMax, value)
 	);
+}
+
+/**
+ * @description Assert the minimum value is less then the maximum value.
+ * @param min A minimum value
+ * @param max A Maximum value
+ */
+function isValidMinMax(min:number,max:number) {
+	assert(min < max, 
+		`Value for argument 'min' should be less then the value for argument 'max'.\n${min} is greater or equal to ${max}.`);
+}
+
+function assert(isTrue: boolean, errorMessage: string) {
+	if(!isTrue) throw new Error(errorMessage);
 }
